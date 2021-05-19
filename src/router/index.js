@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 // set dia chi cac duong link o day ne
@@ -8,7 +7,7 @@ const routes = [
   {
     path: "/print-edition",
     name: "Home",
-    component: Home,
+    component: () => import("../views/PrintEdition.vue"),
   },
   {
     path: "/",
