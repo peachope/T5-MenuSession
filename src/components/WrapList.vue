@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <ListButton />
   </div>
 </template>
@@ -16,7 +16,10 @@ export default {
 </script>
 
 <style lang="scss">
-div {
+.wrap {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

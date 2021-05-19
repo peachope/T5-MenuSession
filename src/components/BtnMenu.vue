@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      btnname: "alo",
+      btnname: "",
     };
   },
 };
@@ -31,5 +31,15 @@ button {
   border: 1px solid #aac0cc;
   border-radius: 3px;
   color: #aac0cc;
+  font-size: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative;
+  &:last-child {
+    &::after {
+      opacity: 0;
+    }
+  }
+ 
 }
 </style>

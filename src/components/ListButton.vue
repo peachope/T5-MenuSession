@@ -1,7 +1,6 @@
 <template>
   <div class="listbtn">
     <BtnMenu v-for="btn in btns" :key="btn.id" :btnName="btn.name" />
-    <span>|</span>
   </div>
 </template>
 
@@ -12,17 +11,20 @@ export default {
   components: {
     BtnMenu,
   },
-
-  props: {
-    btns: {
-      type: Array,
-      default: () => [
-        { name: "anh Quoc dep trai", id: 1 },
-        { name: "mr Quoc handsome", id: 2 },
-        
-      ],
-    },
-  },
+  data(){
+    return {
+        props: {
+            btns: {
+              type: Array,
+              default: () => [
+                { name: "PRINT EDITION", id: 1 },
+                { name: "MANAGER", id: 2 },
+                { name: "DIGITAL EDTION", id: 3 },
+              ],
+            },
+          },
+        }
+      } 
 };
 </script>
 
@@ -30,8 +32,7 @@ export default {
 .listbtn {
   padding: 5px;
   display: flex;
-  width: 200px;
-  margin: 0 auto;
+
   justify-content: space-between;
 }
 </style>
