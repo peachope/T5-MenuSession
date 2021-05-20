@@ -41,6 +41,7 @@ export default {
   justify-content: center;
   width: 100%;
   border-bottom: 1px solid #333;
+  background: #f4f4f4;
   p {
     width: 100px;
     height: 100%;
