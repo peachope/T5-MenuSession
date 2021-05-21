@@ -29,7 +29,7 @@ export default {
   methods: {
     fetchData: function () {
       try {
-        const api = "https://mocki.io/v1/4e479376-60c6-4c11-a809-9ef43ff57780";
+        const api = "https://mocki.io/v1/54302a65-5fc6-4be3-9a3f-c08d7da81fb1";
         axios
           .get(api)
           .then((res) => {

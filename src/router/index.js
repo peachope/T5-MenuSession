@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
-// set dia chi cac duong link o day ne
+
 const routes = [
   {
     path: "/print-edition",

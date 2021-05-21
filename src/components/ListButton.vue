@@ -11,20 +11,14 @@ export default {
   components: {
     BtnMenu,
   },
-  data(){
+  data() {
     return {
-        props: {
-            btns: {
-              type: Array,
-              default: () => [
-                { name: "PRINT EDITION", id: 1 },
-                { name: "MANAGER", id: 2 },
-                { name: "DIGITAL EDTION", id: 3 },
-              ],
-            },
-          },
-        }
-      } 
+      btns: [
+        { name: "Expands All Section", id: 1 },
+        { name: "Add a section", id: 2 },
+      ],
+    };
+  },
 };
 </script>
 
@@ -32,7 +26,5 @@ export default {
 .listbtn {
   padding: 5px;
   display: flex;
-
-  justify-content: space-between;
 }
 </style>
