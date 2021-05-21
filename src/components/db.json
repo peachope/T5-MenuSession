@@ -6,38 +6,38 @@
     },
     {
         "id" : "2",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#41D25C",
+        "name"  : "Section 1"
     },
     {
         "id" : "3",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#41A2D1",
+        "name"  : "Section 2"
     },
     {
         "id" : "4",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#BD41D2",
+        "name"  : "Section 3"
     },
     {
         "id" : "5",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#DD8046",
+        "name"  : "Section 4"
     },
     {
         "id" : "6",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#4657DD",
+        "name"  : "Section 5"
     },
     {
         "id" : "7",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#E36402",
+        "name"  : "Section 6"
     },
     {
         "id" : "8",
-        "background" : "#9373D3",
-        "name"  : "Section"
+        "background" : "#90ECC4",
+        "name"  : "Section 7"
     }
 
 ]

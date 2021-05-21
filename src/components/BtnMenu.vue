@@ -1,24 +1,21 @@
 <template>
-  <button>{{ btnName }}</button>
+  <button>{{ BtnMenu.name }}</button>
 </template>
 
 <script>
 export default {
   name: "BtnMenu",
   props: {
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
-    btnName: {
-      type: String,
-      default: "",
+    btn: {
+      type: Object,
+      required: true,
     },
   },
   data() {
-    return {
-      btnname: "",
-    };
+    return {};
+  },
+  mounted() {
+    // console.log("btn", this);
   },
 };
 </script>
@@ -34,12 +31,5 @@ button {
   font-size: 10px;
   margin-left: 15px;
   cursor: pointer;
-  position: relative;
-  &:last-child {
-    &::after {
-      opacity: 0;
-    }
-  }
- 
 }
 </style>
