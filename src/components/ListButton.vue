@@ -32,9 +32,28 @@ export default {
 
   div {
     &:last-child {
+      // position: relative;
       button {
         background: #42738d;
         color: white;
+        padding: 5px 15px;
+        span {
+          position: relative;
+          margin-right: 10px;
+          &::after {
+            content: "\f067";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-family: "Font Awesome 5 Free";
+            font-weight: 700;
+            color: white;
+            font-size: 7px;
+            display: block;
+            
+          }
+        }
       }
     }
   }

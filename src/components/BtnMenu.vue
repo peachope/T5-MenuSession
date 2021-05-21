@@ -1,5 +1,5 @@
 <template>
-  <button>{{ btn.name }}</button>
+  <button><span></span>{{ btn.name }}</button>
 </template>
 
 <script>
@@ -31,7 +31,5 @@ button {
   font-size: 10px;
   margin-left: 15px;
   cursor: pointer;
-
-  
 }
 </style>
