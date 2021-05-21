@@ -62,8 +62,8 @@ export default {
     display: flex;
     align-items: center;
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50px;
       margin-right: 10px;
     }
