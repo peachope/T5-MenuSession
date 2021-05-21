@@ -5,6 +5,7 @@
         <div v-for="gradle in gradles" :key="gradle.id">
           <Gradle :gradle="gradle" />
         </div>
+        <ListButton />
       </div>
     </div>
   </div>
@@ -13,10 +14,12 @@
 <script>
 import Gradle from "@/components/Gradle.vue";
 import axios from "axios";
+import ListButton from "@/components/ListButton.vue";
 export default {
   name: "ManagerView",
   components: {
     Gradle,
+    ListButton,
   },
   data() {
     return {
