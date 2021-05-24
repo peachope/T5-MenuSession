@@ -29,101 +29,43 @@
 </template>
 
 <script>
+import Gradle from "@/components/Gradle.vue";
+import axios from "axios";
 export default {
-  name: "Gradle",
-  props: {
-    gradle: {
-      type: Object,
-      required: true,
-    },
+  name: "ManagerView",
+  components: {
+    Gradle,
   },
   data() {
     return {
-      msg: "05/21/2021",
+      gradles: [],
     };
   },
   mounted() {
-    console.log("gradle", this.gradle);
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function () {
+      try {
+        const api = "https://mocki.io/v1/54302a65-5fc6-4be3-9a3f-c08d7da81fb1";
+        axios
+          .get(api)
+          .then((res) => {
+            console.log("res", res);
+            this.gradles = res.data;
+          })
+          .catch((error) => console.log(error.message));
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.gradle {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 20px;
-  background: #ffffff;
-  margin: 10px 20px;
-
-  &:first-child {
-    margin-top: 0;
-  }
-  .left-content {
-    display: flex;
-    align-items: center;
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50px;
-      margin-right: 10px;
-    }
-    i {
-      margin-right: 10px;
-      font-size: 13px;
-    }
-    p {
-      font-size: 13px;
-    }
-  }
-  .right-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .section-process {
-      display: flex;
-      position: relative;
-      span {
-        width: 50px;
-        height: 6px;
-        margin-right: 1px;
-        background: #d3d3d3;
-      }
-      span.left {
-        border-radius: 25px 0 0 25px;
-      }
-      span.right {
-        border-radius: 0px 25px 25px 0;
-      }
-      margin-right: 10px;
-      div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 6px;
-        height: 100%;
-        border-radius: 50%;
-        z-index: 3;
-      }
-    }
-    .date {
-      font-size: 13px;
-      margin-right: 10px;
-    }
-    .circle-dots {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 1px solid #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      i {
-        transform: rotate(90deg);
-        font-size: 10px;
-        opacity: 0.5;
-      }
-    }
-  }
+.manager-view {
+  background: #f4f4f4;
+  padding: 20px 15px 30px 0px;
 }
 </style>
