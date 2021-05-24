@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/print-edition",
     name: "Home",
-    component: () => import("../views/PrintEdition.vue"),
+    component: () => import("../views/PrintEdition.vue"), 
   },
   {
     path: "/",

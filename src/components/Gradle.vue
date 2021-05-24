@@ -15,7 +15,8 @@
         <span class="left"></span>
         <span></span>
         <span class="right"></span>
-        <div v-bind:style="{ backgroundColor: gradle.background }"></div>
+        <div v-bin+
+        d:style="{ backgroundColor: gradle.background }"></div>
       </div>
       <div class="date">
         <p>{{ msg }}</p>

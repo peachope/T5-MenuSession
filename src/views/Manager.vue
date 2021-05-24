@@ -15,6 +15,7 @@
 import Gradle from "@/components/Gradle.vue";
 import axios from "axios";
 import ListButton from "@/components/ListButton.vue";
+import store from "@/store";
 export default {
   name: "ManagerView",
   components: {
@@ -28,6 +29,7 @@ export default {
   },
   mounted() {
     this.fetchData();
+    console.log(store.state.products[0].id);
   },
   methods: {
     fetchData: function () {
