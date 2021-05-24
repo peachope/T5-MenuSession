@@ -1,111 +1,53 @@
 <template>
-  <div class="gradle">
-    <div class="left-content" v-bind:style="{ display: 'flex' }">
-      <div
-        class="dot"
-        v-bind:style="{
-          backgroundColor: gradle.background,
-        }"
-      ></div>
-      <i class="fas fa-caret-right"></i>
-      <p>{{ gradle.name }}</p>
-    </div>
-    <div class="right-content">
-      <div class="section-process">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="date">
-        <p>{{ gradle.msg }}</p>
-      </div>
-      <div class="circle-dots">
-        <span>...</span>
+  <div class="manager-view">
+    <div class="main">
+      <div class="list-gradle">
+        <div v-for="gradle in gradles" :key="gradle.id">
+          <Gradle :gradle="gradle" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Gradle from "@/components/Gradle.vue";
+import axios from "axios";
 export default {
-  name: "Gradle",
-  props: {
-    gradle: {
-      type: Object,
-      required: true,
-    },
+  name: "ManagerView",
+  components: {
+    Gradle,
   },
   data() {
     return {
-      msg: "05/21/2021",
+      gradles: [],
     };
   },
   mounted() {
-    console.log("gradle", this.gradle);
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function () {
+      try {
+        const api = "https://mocki.io/v1/54302a65-5fc6-4be3-9a3f-c08d7da81fb1";
+        axios
+          .get(api)
+          .then((res) => {
+            console.log("res", res);
+            this.gradles = res.data;
+          })
+          .catch((error) => console.log(error.message));
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.gradle {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 20px;
-  background: #ffffff;
-  margin: 10px 20px;
-
-  &:first-child {
-    margin-top: 0;
-  }
-  .left-content {
-    display: flex;
-    align-items: center;
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50px;
-      margin-right: 10px;
-    }
-    i {
-      margin-right: 10px;
-      font-size: 13px;
-    }
-    p {
-      font-size: 13px;
-    }
-  }
-  .right-content {
-    display: flex;
-    align-items: center;
-    .section-process {
-      height: 5px;
-      margin-right: 10px;
-      display: flex;
-      span {
-        display: block;
-        width: 50px;
-        margin-right: 1px;
-        background: #d4d4d4;
-        height: 100%;
-
-        &:first-child {
-        }
-      }
-    }
-    .date {
-      margin-right: 10px;
-      font-size: 13px;
-    }
-    .circle-dots {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #333;
-      font-size: 8px;
-    }
-  }
+.manager-view {
+  background: #f4f4f4;
+  padding: 20px 15px 30px 0px;
 }
 </style>
