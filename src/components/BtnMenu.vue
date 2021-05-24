@@ -1,5 +1,5 @@
 <template>
-  <button>{{ BtnMenu.name }}</button>
+  <button><span></span>{{ btn.name }}</button>
 </template>
 
 <script>
@@ -22,12 +22,12 @@ export default {
 
 <style lang="scss">
 button {
-  padding: 10px 15px;
+  padding: 5px 10px;
   outline: none;
   background: #fff;
-  border: 1px solid #aac0cc;
+  border: 1px solid #42738d;
   border-radius: 3px;
-  color: #aac0cc;
+  color: #42738d;
   font-size: 10px;
   margin-left: 15px;
   cursor: pointer;
